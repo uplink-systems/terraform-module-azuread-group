@@ -102,7 +102,7 @@ variable "azuread_group" {
 }
 
 module "azuread_group" {
-  source                      = "github.com/uplink-systems/Terraform-Modules//modules/azuread/group"
+  source                      = "github.com/uplink-systems/terraform-module-azuread-group"
   for_each                    = var.azuread_group
   display_name                = each.value.display_name
   administrative_units        = each.value.administrative_units
