@@ -4,19 +4,6 @@
 
 The module **terraform-module-azuread-group** is intended to create groups in Azure AD following my business needs standards. The module scopes all types/combination of groups (Security/Unified, Assigned/Dynamic) in one resource depending on the variable values provided.  
 
-#### Tasks & ToDos
-
-- [x] Create and manage groups with static assignment
-- [x] Manage static assignments for users, groups and service principals
-- [x] Create and manage groups with dynamic assignment
-- [x] Merge to dynamically create either static assignment group or dynamic assignement group depending on input variable's values
-- [x] Extend creating/managing groups with minimum required attributes only to creating/managing groups with all attributes in Azure AD
-- [x] \(Optional) Apply input variable validation rules if necessary to match available resource values
-- [ ] \(Optional) Apply input variable validation rules if necessary to match business standards
-- [x] Create and manage modules outputs
-- [ ] Document module with README.md
-- [ ] \(Optional) Review code regularly for possible improvements and updates
-
 ### Requirements
 
 | Name | Version |
@@ -68,51 +55,9 @@ output "azuread_group_id_group_1" {
 
 ### Known Issues
 
-<details>
-<summary><b>azuread_group attribute 'var.group.auto_subscribe_new_members'</b></summary>
-
-######
-The variable attribute <i>var.group.auto_subscribe_new_members</i> can only be set when authenticating as a Member user of the tenant and not when authenticating as a Guest user or as a service principal. Please see the <a href="https://docs.microsoft.com/en-us/graph/known-issues#groups">Microsoft Graph Known Issues</a> documentation.  
-https://registry.terraform.io/providers/hashicorp/azuread/latest/docs/resources/group  
-######
-</details>
-
-<details>
-<summary><b>azuread_group attribute 'var.group.mail.external_senders_allowed'</b></summary>
-
-######
-The variable attribute <i>var.group.mail.external_senders_allowed</i> can only be set when authenticating as a Member user of the tenant and not when authenticating as a Guest user or as a service principal. Please see the <a href="https://docs.microsoft.com/en-us/graph/known-issues#groups">Microsoft Graph Known Issues</a> documentation.  
-https://registry.terraform.io/providers/hashicorp/azuread/latest/docs/resources/group  
-######
-</details>
-
-<details>
-<summary><b>azuread_group attribute 'var.group.mail.hide_from_address_lists'</b></summary>
-
-######
-The variable attribute <i>var.group.mail.hide_from_address_lists</i> can only be set when authenticating as a Member user of the tenant and not when authenticating as a Guest user or as a service principal. Please see the <a href="https://docs.microsoft.com/en-us/graph/known-issues#groups">Microsoft Graph Known Issues</a> documentation.  
-https://registry.terraform.io/providers/hashicorp/azuread/latest/docs/resources/group  
-######
-</details>
-
-<details>
-<summary><b>azuread_group attribute 'var.group.mail.hide_from_outlook_clients'</b></summary>
-
-######
-The variable attribute <i>var.group.mail.hide_from_outlook_clients</i> can only be set when authenticating as a Member user of the tenant and not when authenticating as a Guest user or as a service principal. Please see the <a href="https://docs.microsoft.com/en-us/graph/known-issues#groups">Microsoft Graph Known Issues</a> documentation.  
-https://registry.terraform.io/providers/hashicorp/azuread/latest/docs/resources/group  
-######
-</details>
-
-<details>
-<summary><b>azuread_group attribute 'var.group.owners'</b></summary>
-
-######  
-If the group is initially owned by a service principal and you add a user to the owners, you are not able to remove the user from the owners again. At least one user has to stay owner.  
-https://github.com/hashicorp/terraform-provider-azuread/issues/464  
-https://github.com/microsoftgraph/msgraph-metadata/issues/92  
-######
-</details>
+Known issues are documented with the GitHub repo's issues functionality. Please filter the issues by **Types** and select **Known Issue** to get the appropriate issues and read the results carefully before using the module to avoid negative impacts on your infrastructure.  
+  
+<a name="known_issues"></a> [list of Known Issues](https://github.com/uplink-systems/terraform-module-azuread-group/issues?q=type%3A%22known%20issue%22)
   
 ## Notes
 
